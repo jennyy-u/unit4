@@ -10,8 +10,6 @@ color wood = #84592b;
 color mocha = #654321;
 color cherry = #743014;
 
-float x;
-int b;
 
 void setup() {
   size(800, 600);
@@ -31,41 +29,43 @@ void house(float x, float  y, float s) {
   //rotate(PI/2);
   scale(s);
 
-  front();
-  door();
   float r, g, b;
   r = random(0, 255);
   g = random(0, 255);
   b = random(0, 255);
-  window(225, 120, r, g, b);
-  window(140, -40, r, g, b);
-  chimney();
+  front(r, g, b);
+  door(r, g, b);
+  window(225, 120, r, g, b); //side
+  window(140, -40, r, g, b); //top
+  chimney(r, g, b);
 
   popMatrix();
 }
 
-void front() {
-  stroke(olive);
-  fill(olive);
+void front(float r, float b, float g) {
+  //stroke(olive); fill(olive);
+  stroke(r, g, b);
+  fill(r, g, b);
   strokeWeight(3);
   rect(0, 0, 400, 300);
   triangle(0, 0, 200, -150, 400, 0);
   //frame
-  stroke(wood);
-  fill(wood);
+  //stroke(wood); fill(wood);
+  stroke(r, g, b);
+  fill(r, g, b);
   strokeWeight(8);
   line(0, 300, 400, 300);
   line(200, -150, -15, 15);
   line(200, -150, 415, 15);
 }
 
-void door() {
-  stroke(wood);
-  fill(cherry);
+void door(float r, float g, float b) {
+  //stroke(wood); fill(cherry);
   strokeWeight(5);
   rect(50, 100, 120, 200);
   strokeWeight(3);
-  fill(wood);
+  //fill(wood);
+  fill(r, g, b);
   circle(155, 200, 10);
 }
 
@@ -80,13 +80,14 @@ void window(float x, float y, float r, float g, float b) {
   line(x+63, y, x+63, y+100);
 }
 
-void chimney() {
+void chimney(float r, float g, float b) {
   //stroke(mocha); fill(mocha);
   stroke(r, g, b);
   fill(r, g, b);
   rect(30, -100, 50, 10);
-  stroke(wood);
-  fill(wood);
+  //stroke(wood); fill(wood);
+  stroke(r, g, b);
+  fill(r, g, b);
   rect(40, -87, 30, 30);
   triangle(40, -56, 70, -56, 40, -29);
 }
