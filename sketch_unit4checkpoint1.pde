@@ -2,6 +2,14 @@
 //block 2-4
 //april 8, 2025
 
+//color blue = #0000FF;
+
+//color[] one = { blue, red, cyan };
+//color[] two  = { green, yellow, magenta };
+//color[] three = {};
+//color[] four = {};
+//color[] five = {};
+
 
 //global variables
 color sand = #e8d1a7;
@@ -14,6 +22,7 @@ color cherry = #743014;
 void setup() {
   size(800, 600);
   background(sand);
+  //colorMode(HSB, 360, 25);
   //float x = random(0, 255);
   //int count = 0;
   //while (count < 10) {
@@ -46,8 +55,8 @@ void house(float x, float  y, float s) {
 
   float r, g, b;
   r = random(0, 255);
-  g = random(100, 205);
-  b = random(50, 155);
+  g = random(0, 255);
+  b = random(0, 255);
   front(r, g, b);
   door(r, g, b);
   window(225, 120, r, g, b); //side
