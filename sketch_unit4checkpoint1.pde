@@ -14,8 +14,23 @@ color cherry = #743014;
 void setup() {
   size(800, 600);
   background(sand);
-  house(random(100, 500), random(100, 500), random(0.25, 1)); //(x, y, scale factor)
-  float x = random(0, 255);
+  //float x = random(0, 255);
+  //int count = 0;
+  //while (count < 10) {
+  //house(random(100, 500), random(100, 500), random(0.25, 1)); //(x, y, scale factor)
+  //count = count + 1;
+  //}
+  int a, b;
+  a = 50;
+  b = 50;
+  while (b < 600) {
+    house(a, b, 0.25);
+    a = a + 150;
+    if ( a >= 800) {
+      a = 50;
+      b = b + 150;
+    }
+  }
 }
 
 
@@ -31,8 +46,8 @@ void house(float x, float  y, float s) {
 
   float r, g, b;
   r = random(0, 255);
-  g = random(0, 255);
-  b = random(0, 255);
+  g = random(100, 205);
+  b = random(50, 155);
   front(r, g, b);
   door(r, g, b);
   window(225, 120, r, g, b); //side
