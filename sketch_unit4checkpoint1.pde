@@ -2,14 +2,6 @@
 //block 2-4
 //april 8, 2025
 
-//color blue = #0000FF;
-
-//color[] one = { blue, red, cyan };
-//color[] two  = { green, yellow, magenta };
-//color[] three = {};
-//color[] four = {};
-//color[] five = {};
-
 
 //global variables
 color sand = #e8d1a7;
@@ -17,6 +9,13 @@ color olive = #9d9167;
 color wood = #84592b;
 color mocha = #654321;
 color cherry = #743014;
+
+
+//color[] one = { blue, red, cyan };
+//color[] two  = { green, yellow, magenta };
+//color[] three = {};
+//color[] four = {};
+//color[] five = {};
 
 
 void setup() {
