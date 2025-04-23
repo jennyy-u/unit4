@@ -15,17 +15,19 @@ color white = #ffffff;
 void setup() {
   size(800, 600);
   background(255);
-  branches(0, 0);
-  flower(0, 0);
+  cherryblossomtree();
 }
 
 void cherryblossomtree() {
-  //branches
-  //flower
+  branches(0, 0);
+  float c = 0;
+  while (c <= 800) {
+    flower(c, random(200, 500));
+    c = c + 100;
+  }
 }
 
 void branches(int x, int y) {
-
   strokeWeight(7);
   stroke(mahogany);
   fill(mahogany);
@@ -46,12 +48,12 @@ void branches(int x, int y) {
   line(278, 200, random(310, 350), random(150, 210));
 }
 
-void flower(int x, int y) {
-  scale(2);
+void flower(float x, float y) {
+  scale(random(0.07, 0.3));
   strokeWeight(2);
   stroke(ccandy);
   fill(ccandy);
-  circle(120, 120, 12); //(0, 0, 12)
+  circle(120, 120, 6); //(0, 0, 6)
 
   pushMatrix();
   petals(120, 120);
@@ -64,31 +66,31 @@ void flower(int x, int y) {
     fill(mauvep);
     rotate(radians(72*b));
     line(-2, 0, random(-3, 0), random(-20, -10));
-    line(2, 0, random(0, 5), random(-20, -10));
+    line(2, 0, random(0, 3), random(-20, -10));
     popMatrix();
     b = b + 1;
   }
-    circle(0, 0, 6);
+  circle(0, 0, 6);
 
-    stroke(white);
-    fill(white);
-    circle(random(-10, -5), random(-5, 0), 4);
-    circle(random(-5, 0), random(-5, 5), random(4, 6));
-    circle(random(5, 10), random(-5, 5), random(4, 8));
+  stroke(white);
+  fill(white);
+  circle(random(-10, -5), random(-5, 0), 4);
+  circle(random(-5, 0), random(-5, 5), random(4, 6));
+  circle(random(5, 10), random(-5, 5), random(4, 8));
+  popMatrix();
+}
+
+void petals(float x, float y) {
+  translate(x, y);
+  int a = 0;
+  while (a < 5) {
+    pushMatrix();
+    stroke(ccandy);
+    fill(ccandy);
+    rotate(radians(72*a));
+    ellipse(30, 5, 30, 30);
+    triangle(30, -10, 22, 17, 0, -5);
     popMatrix();
+    a = a + 1;
   }
-
-  void petals(float x, float y) {
-    translate(x, y);
-    int a = 0;
-    while (a < 5) {
-      pushMatrix();
-      stroke(ccandy);
-      fill(ccandy);
-      rotate(radians(72*a));
-      ellipse(30, 5, 30, 30);
-      triangle(30, -10, 22, 18, 0, -5);
-      popMatrix();
-      a = a + 1;
-    }
-  }
+}
