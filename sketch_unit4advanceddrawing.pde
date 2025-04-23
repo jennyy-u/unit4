@@ -9,6 +9,7 @@ color blush = #eeadaa;
 color mauvep = #d38f8f;
 color spink = #c87377;
 color purplep = #a77370;
+color wood = #7f472d;
 color white = #ffffff;
 
 
@@ -16,6 +17,7 @@ void setup() {
   size(800, 600);
   background(255);
   cherryblossomtree();
+  bridge();
 }
 
 void cherryblossomtree() {
@@ -23,7 +25,7 @@ void cherryblossomtree() {
   float c = 0;
   while (c <= 800) {
     flower(c, random(200, 500));
-    c = c + 100;
+    c = c + 500;
   }
 }
 
@@ -93,4 +95,12 @@ void petals(float x, float y) {
     popMatrix();
     a = a + 1;
   }
+}
+
+
+
+void bridge() {
+  strokeWeight(5);
+  stroke(wood);
+  fill(wood);
 }
