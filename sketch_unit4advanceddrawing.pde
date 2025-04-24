@@ -9,25 +9,52 @@ color blush = #eeadaa;
 color mauvep = #d38f8f;
 color spink = #c87377;
 color purplep = #a77370;
-color wood = #7f472d;
+color cinnamon = #84592b;
+color wood = #694722;
 color white = #ffffff;
 
 
 void setup() {
   size(800, 600);
   background(255);
+  pushMatrix();
   cherryblossomtree();
+  popMatrix();
   bridge();
 }
 
 void cherryblossomtree() {
   branches(0, 0);
-  float c = 0;
-  while (c <= 800) {
-    flower(c, random(200, 500));
-    c = c + 500;
+  pushMatrix();
+  float c = 20;
+  while (c <= 40) {
+    flower(random(350, 450), random(350, 450));
+    //flowerB(random(350, 450),  random(350, 450));
+    c = c + 1;
   }
+  popMatrix();
 }
+
+
+void flowerB(float x, float y) {
+  pushMatrix();
+  translate (x,y);
+  scale(random(0.3, 0.9));
+  int p = 0;
+  fill(255);
+  while (p < 5) {
+    ellipse(20, 0, 30, 10);
+    rotate(radians(360/5));
+    p = p + 1;
+  }
+  
+  ellipse(0, 0, 20, 20);
+  
+  
+  popMatrix();
+}
+
+
 
 void branches(int x, int y) {
   strokeWeight(7);
@@ -51,7 +78,10 @@ void branches(int x, int y) {
 }
 
 void flower(float x, float y) {
-  scale(random(0.07, 0.3));
+  pushMatrix();
+  translate(x, y);
+  //scale(random(0.07, 0.3));
+  scale(1);
   strokeWeight(2);
   stroke(ccandy);
   fill(ccandy);
@@ -80,9 +110,11 @@ void flower(float x, float y) {
   circle(random(-5, 0), random(-5, 5), random(4, 6));
   circle(random(5, 10), random(-5, 5), random(4, 8));
   popMatrix();
+
 }
 
 void petals(float x, float y) {
+  pushMatrix();
   translate(x, y);
   int a = 0;
   while (a < 5) {
@@ -95,12 +127,41 @@ void petals(float x, float y) {
     popMatrix();
     a = a + 1;
   }
+  popMatrix();
+  popMatrix();
 }
 
 
 
 void bridge() {
-  strokeWeight(5);
+  strokeWeight(5);  
   stroke(wood);
   fill(wood);
+  line(0, 405, 800, 405);
+  line(0, 430, 800, 430);
+  
+  pushMatrix();
+  int ln = 20;
+  while(ln < 800) {
+    strokeWeight(7);
+    line(ln, 433, ln, 500);
+    ln = ln + 70;
+  }
+  popMatrix();
+  
+  stroke(cinnamon);
+  fill(cinnamon);
+  line(0, 400, 800, 400);
+  rect(0, 500, 800, 10);
+  
+  pushMatrix();
+  int l = 0;
+  while(l < 800) {
+    strokeWeight(7);
+    stroke(cinnamon);
+  line(l, 410, l, 500);
+  //rect(l, 410, l+10, 90);
+  l = l + 70;
+  }
+  popMatrix();
 }
