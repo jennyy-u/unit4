@@ -132,6 +132,7 @@ void petals(float x, float y) {
   popMatrix();
 }
 
+
 //-----------------------------------------------------------------------
 
 void snow() {
@@ -148,7 +149,9 @@ void snow() {
     ellipse(s, 500, random(20, 30), random(3, 12));
     s = s + 10;
   }
+  popMatrix();
 }
+
 
 void bridge() {
   strokeWeight(5);
@@ -158,7 +161,6 @@ void bridge() {
   strokeWeight(7);
   line(0, 430, 800, 430);
   line(0, 465, 800, 465);
-
 
   pushMatrix();
   int ln = 20;
@@ -187,8 +189,6 @@ void bridge() {
   strokeWeight(7);
   line(0, 450, 800, 450);
   rect(0, 500, 800, 10);
-
-
 
   pushMatrix();
   int l = 0;
