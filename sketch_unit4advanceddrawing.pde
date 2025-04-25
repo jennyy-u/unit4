@@ -16,10 +16,11 @@ color white = #ffffff;
 
 void setup() {
   size(800, 600);
-  background(255);
+  background(#d3d3d3);
   pushMatrix();
   cherryblossomtree();
   popMatrix();
+  snow();
   bridge();
 }
 
@@ -55,6 +56,7 @@ void flowerB(float x, float y) {
 }
 
 
+//-----------------------------------------------------------------------
 
 void branches(int x, int y) {
   strokeWeight(7);
@@ -130,7 +132,23 @@ void petals(float x, float y) {
   popMatrix();
 }
 
+//-----------------------------------------------------------------------
 
+void snow() {
+  strokeWeight(5);
+  stroke(white);
+  fill(white);
+  pushMatrix();
+  float s = -10;
+  while (s < 800) {
+    ellipse(s, 400, random(10, 20), random(3, 10));
+    ellipse(s, 428, random(10, 20), random(3, 5));
+    ellipse(s, 448, random(10, 20), random(3, 5));
+    ellipse(s, 463, random(10, 20), random(3, 5));
+    ellipse(s, 500, random(20, 30), random(3, 12));
+    s = s + 10;
+  }
+}
 
 void bridge() {
   strokeWeight(5);
