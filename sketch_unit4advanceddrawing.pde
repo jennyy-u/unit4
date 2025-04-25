@@ -38,7 +38,7 @@ void cherryblossomtree() {
 
 void flowerB(float x, float y) {
   pushMatrix();
-  translate (x,y);
+  translate (x, y);
   scale(random(0.3, 0.9));
   int p = 0;
   fill(255);
@@ -47,10 +47,10 @@ void flowerB(float x, float y) {
     rotate(radians(360/5));
     p = p + 1;
   }
-  
+
   ellipse(0, 0, 20, 20);
-  
-  
+
+
   popMatrix();
 }
 
@@ -110,7 +110,6 @@ void flower(float x, float y) {
   circle(random(-5, 0), random(-5, 5), random(4, 6));
   circle(random(5, 10), random(-5, 5), random(4, 8));
   popMatrix();
-
 }
 
 void petals(float x, float y) {
@@ -134,34 +133,63 @@ void petals(float x, float y) {
 
 
 void bridge() {
-  strokeWeight(5);  
+  strokeWeight(5);
   stroke(wood);
   fill(wood);
   line(0, 405, 800, 405);
+  strokeWeight(7);
   line(0, 430, 800, 430);
-  
+  line(0, 465, 800, 465);
+
+
   pushMatrix();
   int ln = 20;
-  while(ln < 800) {
+  while (ln < 800) {
     strokeWeight(7);
-    line(ln, 433, ln, 500);
-    ln = ln + 70;
+    strokeCap(PROJECT);
+    line(ln, 435, ln, 500);
+    ln = ln + 120;
   }
   popMatrix();
-  
+
+  pushMatrix();
+  int lln = 80;
+  while (lln < 800) {
+    strokeWeight(7);
+    stroke(wood);
+    line(lln, 455, lln, 500);
+    lln = lln + 60;
+  }
+  popMatrix();
+
   stroke(cinnamon);
+  strokeWeight(5);
   fill(cinnamon);
   line(0, 400, 800, 400);
+  strokeWeight(7);
+  line(0, 450, 800, 450);
   rect(0, 500, 800, 10);
-  
+
+
+
   pushMatrix();
   int l = 0;
-  while(l < 800) {
+  while (l < 800) {
+    strokeWeight(7);
+    strokeCap(PROJECT);
+    stroke(cinnamon);
+    line(l, 411, l, 500);
+    l = l + 120;
+  }
+  popMatrix();
+
+  pushMatrix();
+  int ll = 60;
+  while (ll < 800) {
     strokeWeight(7);
     stroke(cinnamon);
-  line(l, 410, l, 500);
-  //rect(l, 410, l+10, 90);
-  l = l + 70;
+    line(ll, 455, ll, 500);
+    ll = ll + 60;
   }
   popMatrix();
 }
