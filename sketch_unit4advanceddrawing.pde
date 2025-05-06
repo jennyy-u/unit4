@@ -3,6 +3,10 @@
 //april 16, 2025
 
 //global variables
+color indigo = #1860c3;
+color mblue = #3d80cb;
+color sky = #71a9db;
+
 color mahogany = #584748;
 color ccandy = #fdd4d7;
 color blush = #eeadaa;
@@ -13,16 +17,31 @@ color cinnamon = #84592b;
 color wood = #694722;
 color white = #ffffff;
 
+int p = 0;
+float percent = 0;
+float position = 0;
 
 void setup() {
   size(800, 600);
-  background(#d3d3d3);
+  background(sky);
+  //sky();
   pushMatrix();
   cherryblossomtree();
   popMatrix();
   snow();
   bridge();
 }
+
+void sky {
+  while (y <=  600) {
+    percent = map (position, 0, 600, 0, 1);
+    color p = lerpColor (sky, mblue, indigo, percent);
+    stroke(p);
+    line (0, position, 600, position);
+    position = position + 10;
+  }
+}
+
 
 void cherryblossomtree() {
   branches(0, 0);
