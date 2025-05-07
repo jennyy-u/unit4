@@ -16,7 +16,9 @@ color purplep = #a77370;
 color cinnamon = #84592b;
 color wood = #694722;
 color white = #ffffff;
+color silver = #e0e0e0;
 
+int x, y;
 int p = 0;
 float percent = 0;
 float position = 0;
@@ -25,6 +27,7 @@ void setup() {
   size(800, 600);
   background(sky);
   //sky();
+  stars();
   pushMatrix();
   cherryblossomtree();
   popMatrix();
@@ -32,16 +35,38 @@ void setup() {
   bridge();
 }
 
-void sky {
-  while (y <=  600) {
-    percent = map (position, 0, 600, 0, 1);
-    color p = lerpColor (sky, mblue, indigo, percent);
-    stroke(p);
-    line (0, position, 600, position);
-    position = position + 10;
-  }
+void sky() {
 }
 
+
+void stars() {
+  int n = 100;
+  while (n > 0) {
+    strokeWeight(3);
+    stroke(white);
+    fill(white);
+    circle(400, 200, n);
+    n = n - 10;
+  }
+  //triangle(430, 160, 430, 240, 520, 200);
+
+  pushMatrix();
+  //translate(x, y);
+  int s = 0;
+  while (s < 4) {
+    pushMatrix();
+    stroke(white);
+    fill(white);
+    rotate(radians(90s*s));
+    triangle(430, 160, 430, 240, 520, 200);
+    popMatrix();
+    s = s + 1;
+  }
+  popMatrix();
+}
+
+
+//-----------------------------------------------------------------------
 
 void cherryblossomtree() {
   branches(0, 0);
@@ -74,8 +99,6 @@ void flowerB(float x, float y) {
   popMatrix();
 }
 
-
-//-----------------------------------------------------------------------
 
 void branches(int x, int y) {
   strokeWeight(7);
