@@ -57,7 +57,7 @@ void stars() {
     pushMatrix();
     stroke(white);
     fill(white);
-    rotate(radians(90s*s));
+    rotate(radians(90*s));
     triangle(430, 160, 430, 240, 520, 200);
     popMatrix();
     s = s + 1;
