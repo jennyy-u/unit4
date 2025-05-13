@@ -5,7 +5,7 @@
 //global variables
 color indigo = #1860c3;
 color mblue = #3d80cb;
-color sky = #71a9db;
+color sky = #9eccfa;
 
 color mahogany = #584748;
 color ccandy = #fdd4d7;
