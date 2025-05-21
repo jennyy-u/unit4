@@ -27,7 +27,7 @@ void setup() {
   size(800, 600);
   background(sky);
   //sky();
-  stars();
+stars(0, 0);
   pushMatrix();
   cherryblossomtree();
   popMatrix();
@@ -38,8 +38,15 @@ void setup() {
 void sky() {
 }
 
+void stars(float x, float y)  {
+  pushMatrix();
+  translate(x, y);
+  starsc();
+  starss();
+  popMatrix();
+}
 
-void stars() {
+void starsc() {
   int n = 100;
   while (n > 0) {
     strokeWeight(3);
@@ -48,20 +55,22 @@ void stars() {
     circle(400, 200, n);
     n = n - 10;
   }
-  //triangle(430, 160, 430, 240, 520, 200);
+}
+void starss() {
 
   pushMatrix();
-  //translate(x, y);
+  translate(x, y);
   int s = 0;
   while (s < 4) {
-    pushMatrix();
     stroke(white);
+    scale(1.2);
     fill(white);
-    rotate(radians(90*s));
     triangle(430, 160, 430, 240, 520, 200);
-    popMatrix();
+    rotate(radians(90*4));
     s = s + 1;
   }
+
+  
   popMatrix();
 }
 
@@ -74,7 +83,7 @@ void cherryblossomtree() {
   float c = 20;
   while (c <= 40) {
     flower(random(350, 450), random(350, 450));
-    //flowerB(random(350, 450),  random(350, 450));
+    flowerB(random(350, 450), random(350, 450));
     c = c + 1;
   }
   popMatrix();
