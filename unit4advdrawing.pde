@@ -21,11 +21,17 @@ color silver = #e0e0e0;
 
 
 void setup() {
- size(800, 600);
- background(sky);
- snow();
- bridge();
-  
+  size(800, 600);
+  background(sky);
+  pushMatrix();
+  float star = 0;
+  while (star < 800) {
+    star(random(0, 800), random(0, 350));
+    star = star + 30;
+  }
+  popMatrix();
+  snow();
+  bridge();
 }
 
 
@@ -36,7 +42,36 @@ void setup() {
 
 
 //object 2-------------------------------------------------------------------------------
+void star(float x, float y) {
+  pushMatrix();
+  translate (x, y);
+  scale(random(0.02, 0.15));
+  starCenter();
+  starTriangle();
+  popMatrix();
+}
 
+void starCenter() {
+  int n = 100;
+  while (n > 0) {
+    strokeWeight(3);
+    stroke(white);
+    fill(white);
+    circle(0, 0, n);
+    n = n - 10;
+  }
+}
+
+void starTriangle() {
+  int s = 0;
+  while (s <= 360) {
+    stroke(white);
+    fill(white);
+    triangle(0, -50, 0, 50, 120, 0);
+    rotate(radians(s));
+    s = s + 90;
+  }
+}
 
 
 
